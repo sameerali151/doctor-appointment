@@ -1,0 +1,49 @@
+<div class="container" ng-controller="AddUserController">
+
+
+    <h2 class="">Book A Doctor’s Appointment Online </h2>
+    <p class="pad0">Please fill in the details in the online form below and we will reply to you at the earliest for any appointment requests that are made.</p>
+
+    <hr/>
+    <div class="row">
+        <label>First Name:</label> <input class="input-sm spacing" ng-model="userDto.firstName" placeholder="Enter Your First Name"
+                                          type="text"/>
+    </div>
+    <div class="row">
+        <label>Last Name:</label> <input class="input-sm spacing" ng-model="userDto.lastName" placeholder="Enter Your Last Name"
+                                         type="text"/>
+    </div>
+
+    <div class="row">
+        <label>Date of Birth:</label> <input class="input-sm spacing" ng-model="userDto.dob" placeholder="Enter Your Date of Birth"
+                                             type="text"/>
+    </div>
+    <div class="row">
+        <label>Choose a date and time for your appointment:</label>
+        <input class="input-sm spacing" ng-model="userDto.appointmentDttm" placeholder="Appointment date and time"
+               type="text"/>
+    </div>
+
+
+    <div class="row">
+        <button class="btn btn-sm btn-info" ng-click="saveUser()">Save Appointment</button>
+    </div>
+
+    <hr/>
+
+  <!--  <div class="row">
+        <p>{{allUsers | json}}</p>
+    </div>-->
+
+    <hr/>
+    <h3 class="">Appointment details:</h3>
+    <div class="row" ng-repeat="user in allUsers">
+
+        <div class="">
+            <h3>{{user.firstName}}</h3>
+            <span class="spacing">{{user.userId}}</span>
+            <span class="spacing" ng-repeat="appointment in user.appointments">{{appointment.appointDateTime}}</span>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Main Page</title>
+</head>
+<body ng-app="appointment">
+
+<div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#!view-user">Search Appointment Details</a></li>
+    </ul>
+</div>
+
+<div ng-view></div>
+
+</body>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/angular-route.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="js/app/app.js"></script>
+<!-- <script src="js/app/UserController.js"></script> -->
+<script src="js/app/AddUserController.js"></script>
+<script src="js/app/ViewUserController.js"></script>
+<script src="js/app/UserService.js"></script>
+<link href="css/lib/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/app/app.css" rel="stylesheet"/>
+</html>

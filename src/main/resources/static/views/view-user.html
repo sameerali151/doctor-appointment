@@ -1,0 +1,33 @@
+<div class="container" ng-controller="ViewUserController">
+
+    <div class="row">
+        <label>User Id:</label> <input class="input-sm spacing" ng-model="userId" placeholder="Enter Appointment Id"
+                                       type="text"/>
+
+        <button class="btn btn-sm btn-info" ng-click="getUserById()">Submit</button>
+    </div>
+
+    <hr/>
+
+    <div class="container">
+        <!-- <p>{{allUsers | json}}</p>-->
+        <h3></h3>
+        <div class="row"><label>Appointment Id:</label> <span class="spacing">{{allUsers.userId}} </span></div>
+        <div class="row"><label>First Name:</label><span class="spacing">{{allUsers.firstName}}</span></div>
+        <div class="row"><label>Last Name:</label> <span class="spacing">{{allUsers.lastName}}</span></div>
+        <div class="row"><label>Date of Birth:</label><span class="spacing">{{allUsers.dob}}</span></div>
+        <div class="row"><label>Date and time for your appointment:</label> <span class="spacing">{{allUsers.appointmentDttm}}</span>
+        </div>
+
+    </div>
+
+    <hr/>
+    <div class="row" ng-repeat="user in allUsers">
+        <div class="">
+            <h3>{{user.firstName}}</h3>
+            <span class="spacing">{{user.userId}}</span>
+            <span class="spacing" ng-repeat="appointment in user.appointments">{{appointment.appointDateTime}}</span>
+        </div>
+    </div>
+
+</div>
